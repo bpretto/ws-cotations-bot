@@ -20,33 +20,33 @@ function start(client) {
             let res = await hgApi.get("/quotations?key=a3d96c22");
             res = res.data.results
             console.log(res)
-            const text = `*MOEDAS*
-Dólar: ${res.currencies.USD.sell}
-Variação: ${res.currencies.USD.variation}%
+            const text = `💲 *MOEDAS* 💲
+💵 Dólar: R$${res.currencies.USD.buy}
+📊 Variação: ${res.currencies.USD.variation}%
 
-Euro: ${res.currencies.EUR.sell}
-Variação: ${res.currencies.EUR.variation}%
+💶 Euro: R$${res.currencies.EUR.buy}
+📊 Variação: ${res.currencies.EUR.variation}%
 
-Libra: ${res.currencies.GBP.sell}
-Variação: ${res.currencies.GBP.variation}%
+💷 Libra: R$${res.currencies.GBP.buy}
+📊 Variação: ${res.currencies.GBP.variation}%
 
-BIT COIN: ${res.currencies.BTC.sell}
-Variação: ${res.currencies.BTC.variation}%
+₿ BITCOIN: R$${res.currencies.BTC.buy}
+📊 Variação: ${res.currencies.BTC.variation}%
 
 
 
-*BOLSAS*
-B3: ${res.stocks.IBOVESPA.points}
-Variação: ${res.stocks.IBOVESPA.variation}%
+👜 *BOLSAS* 👜
+🇧🇷 B3: ${res.stocks.IBOVESPA.points} pts.
+📊 Variação: ${res.stocks.IBOVESPA.variation}%
 
-IFIX: ${res.stocks.IFIX.points}
-Variação: ${res.stocks.IFIX.variation}%
+🇧🇷 IFIX: ${res.stocks.IFIX.points} pts.
+📊 Variação: ${res.stocks.IFIX.variation}%
 
-NASDAQ: ${res.stocks.NASDAQ.points}
-Variação: ${res.stocks.NASDAQ.variation}%
+🇺🇸 NASDAQ: ${res.stocks.NASDAQ.points} pts.
+📊 Variação: ${res.stocks.NASDAQ.variation}%
 
-DOW JONES: ${res.stocks.DOWJONES.points}
-Variação: ${res.stocks.DOWJONES.variation}%
+🇺🇸 DOW JONES: ${res.stocks.DOWJONES.points} pts.
+📊 Variação: ${res.stocks.DOWJONES.variation}%
 `
             client
                 .sendText(message.from, text)
