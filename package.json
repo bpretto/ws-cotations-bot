@@ -8,7 +8,6 @@
   },
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/venom.ts",
-    "postinstall": "tsc",
     "start": "node src/venom.js",
     "watch-node": "nodemon src/venom.js",
     "watch-ts": "tsc -w",
