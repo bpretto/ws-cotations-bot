@@ -51,6 +51,10 @@ function start(client) {
 
 🇺🇸 DOW JONES: ${res.stocks.DOWJONES.points} pts.
 📊 Variação: ${res.stocks.DOWJONES.variation}%
+
+
+
+⚠️ *BOT para fins informativos, os dados podem estar atrasados entre 15 minutos e 1 hora.*
 `
             client
                 .sendText(message.from, text)
