@@ -2,6 +2,8 @@
 import { hgApi } from "./hgApi";
 const venom = require('venom-bot');
 
+const hgApiKey = "a3d96c22"
+
 venom
     .create({
         session: 'session-name', //name of session
@@ -17,10 +19,11 @@ function start(client) {
         // if (message.isGroupMsg === false) {
         if (message.body === '.index') {
             // index(message, client)
-            let res = await hgApi.get("/quotations?key=a3d96c22");
+            let res = await hgApi.get(`/quotations?key=${hgApiKey}`);
             res = res.data.results
             console.log(res)
-            const text = `💲 *MOEDAS* 💲
+            const text = `--- 💲 *MOEDAS* 💲 ---
+
 💵 Dólar: R$${res.currencies.USD.buy}
 📊 Variação: ${res.currencies.USD.variation}%
 
@@ -35,7 +38,8 @@ function start(client) {
 
 
 
-👜 *BOLSAS* 👜
+--- 👜 *BOLSAS* 👜 ---
+
 🇧🇷 B3: ${res.stocks.IBOVESPA.points} pts.
 📊 Variação: ${res.stocks.IBOVESPA.variation}%
 
