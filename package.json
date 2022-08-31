@@ -8,8 +8,9 @@
   },
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/venom.ts",
-    "start": "node src/venom.js",
-    "watch-node": "nodemon src/venom.js",
+    "postinstall": "tsc",
+    "start": "node dist/venom.js",
+    "watch-node": "nodemon dist/venom.js",
     "watch-ts": "tsc -w",
     "deploy": "git add . && git commit -m 'Heroku' && git push"
   },
